@@ -31,6 +31,9 @@
         #targetScore{
             width:15%;
         }
+        .great{
+            margin-top:15%;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +65,7 @@
 
             renderWin(){
                 return(
-                    <div>
+                    <div className="great">
                         <h1>Congratulations! You Win</h1>
                         <button className="btn btn-primary" onClick={() => window.location.reload()}>Click here</button>
                     </div>
