@@ -24,6 +24,10 @@
         .values{
             font-size:40px;
         }
+        #res{
+            width:20%;
+        }
+
     </style>
 </head>
 <body>
@@ -78,7 +82,7 @@
                         </div>
                         <div className="values">
                         <p className={this.state.incorrect ? "incorrect":""}>{this.state.num1} + {this.state.num2}</p>
-                        <input onKeyPress={this.inputKeyPress} onChange={this.UpdateResponse} value={this.state.response}/>
+                    <input id="res" onKeyPress={this.inputKeyPress} onChange={this.UpdateResponse} value={this.state.response}/>
                         </div>
                         <div>Score:{this.state.score}</div>
                     </div>
