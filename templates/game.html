@@ -14,7 +14,11 @@
         body{
             text-align: center;
         }
-        p{
+        .score .input{
+            font-size:20px;
+        }
+
+        .values{
             font-size:40px;
         }
     </style>
@@ -31,13 +35,14 @@
                     num1:0,
                     num2:0,
                     response:"",
-                    incorrect:false
+                    incorrect:false,
+                    winScore:""
                 };
 
             }
 
             render(){
-                if(this.state.score===10){
+                if(this.state.score=== parseInt(this.state.winScore)){
                     return this.renderWin();
                 }
                 else{
@@ -57,12 +62,30 @@
             renderProblem(){
                 return(
                     <div>
-                        <h1>FlashCard Game</h1>
+                        <h1>Addition Game</h1>
+                        <div className="score">
+                            <p>Target score to win: {this.state.winScore}</p>
+                        </div>
+                        <div className="input">
+                            <p> &nbsp;
+                            <label>Target score setup:</label><br></br><br></br>
+                            <input placeholder="enter score to win" onChange={this.winScoreUpdate} value={this.state.winScore}/>
+                        </p>
+                        </div>
+                        <div className="values">
                         <p className={this.state.incorrect ? "incorrect":""}>{this.state.num1} + {this.state.num2}</p>
                         <input onKeyPress={this.inputKeyPress} onChange={this.UpdateResponse} value={this.state.response}/>
+                        </div>
                         <div>Score:{this.state.score}</div>
                     </div>
                 );
+            }
+
+            winScoreUpdate = (event)=>{
+                this.setState({
+                    winScore: event.target.value
+                });
+
             }
 
             UpdateResponse = (event) =>{
