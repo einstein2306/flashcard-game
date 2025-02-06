@@ -63,14 +63,14 @@
                 return(
                     <div>
                         <h1>Addition Game</h1>
-                        <div className="score">
-                            <p>Target score to win: {this.state.winScore}</p>
-                        </div>
                         <div className="input">
-                            <p> &nbsp;
+                            <p>
                             <label>Target score setup:</label><br></br><br></br>
                             <input placeholder="enter score to win" onChange={this.winScoreUpdate} value={this.state.winScore}/>
                         </p>
+                        </div>
+                        <div className="score">
+                            <p>Target score to win: {this.state.winScore}</p>
                         </div>
                         <div className="values">
                         <p className={this.state.incorrect ? "incorrect":""}>{this.state.num1} + {this.state.num2}</p>
