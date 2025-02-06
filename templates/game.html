@@ -31,8 +31,11 @@
         #targetScore{
             width:15%;
         }
-        .great{
+        .great {
             margin-top:15%;
+        }
+        .problem{
+            margin-top:10%;
         }
     </style>
 </head>
@@ -51,7 +54,6 @@
                     incorrect:false,
                     winScore:""
                 };
-
             }
 
             render(){
@@ -74,8 +76,7 @@
 
             renderProblem(){
                 return(
-                    <div>
-                        <br></br><br></br>
+                    <div className="problem">
                         <h1>Addition Game</h1>
                         <hr></hr>
                         <br></br>
