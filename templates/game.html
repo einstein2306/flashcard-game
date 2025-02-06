@@ -15,7 +15,7 @@
         }
         body{
             text-align: center;
-            background-color: lightsteelblue;
+            background-color: rgba(204, 220, 227, 0.288);
         }
         .score .input{
             font-size:20px;
@@ -64,7 +64,7 @@
                 return(
                     <div>
                         <h1>Congratulations! You Win</h1>
-                        <button onClick={() => window.location.reload()}>Click here</button>
+                        <button className="btn btn-primary" onClick={() => window.location.reload()}>Click here</button>
                     </div>
                 );
             }
@@ -79,7 +79,7 @@
                         <div className="input">
                             <p>
                             <label>Target score setup</label><br></br><br></br>
-                            <input id="targetScore" placeholder="Target Score to win" onChange={this.winScoreUpdate} value={this.state.winScore}/>
+                            <input id="targetScore" onChange={this.winScoreUpdate} value={this.state.winScore}/>
                         </p>
                         </div>
                         <div className="score">
