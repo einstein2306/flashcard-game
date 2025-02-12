@@ -35,7 +35,7 @@
             margin-top:15%;
         }
         .problem{
-            margin-top:10%;
+            margin-top:7%;
         }
     </style>
 </head>
@@ -91,9 +91,13 @@
                         </div>
                         <div className="values">
                         <p className={this.state.incorrect ? "incorrect":""}>{this.state.num1} + {this.state.num2}</p>
-                    <input id="res" onKeyPress={this.inputKeyPress} onChange={this.UpdateResponse} value={this.state.response}/>
+                    <input id="res"  onChange={this.UpdateResponse} value={this.state.response}/>
                         </div>
                         <div>Score:{this.state.score}</div>
+                        <br></br>
+                        <div>
+                            <button className="btn btn-primary" onClick={this.inputKeyPress}>Submit</button>
+                        </div>
                     </div>
                 );
             }
@@ -111,9 +115,8 @@
                 });
             }
 
-            inputKeyPress = (event) =>{
+            inputKeyPress = () =>{
 
-                if(event.key === "Enter"){
                     // correct answer..
                     const answer = parseInt(this.state.response);
                     if(answer === this.state.num1 + this.state.num2){
@@ -135,7 +138,7 @@
                         }));
 
                     }
-                }
+                
 
             }
 
