@@ -15,7 +15,7 @@
         }
         body{
             text-align: center;
-            background-color: rgba(204, 220, 227, 0.288);
+            background-color: rgba(234, 184, 22, 0.868);
         }
         .score .input{
             font-size:20px;
@@ -25,18 +25,18 @@
             font-size:40px;
         }
         #res{
-            width:30%;
+            width:20%;
             border:6%;
+            margin-left:40%;
         }
         #targetScore{
             width:15%;
+            margin-left: 42%;
         }
         .great {
             margin-top:15%;
         }
-        .problem{
-            margin-top:7%;
-        }
+       
     </style>
 </head>
 <body>
@@ -79,25 +79,22 @@
                     <div className="problem">
                         <h1>Addition Game</h1>
                         <hr></hr>
-                        <br></br>
                         <div className="input">
                             <p>
                             <label>Target score setup</label><br></br><br></br>
-                            <input id="targetScore" onChange={this.winScoreUpdate} value={this.state.winScore}/>
+                            <input className="form-control" id="targetScore" onChange={this.winScoreUpdate} value={this.state.winScore}/>
                         </p>
                         </div>
                         <div className="score">
                             <p>Target score to win: {this.state.winScore}</p>
                         </div>
                         <div className="values">
-                        <p className={this.state.incorrect ? "incorrect":""}>{this.state.num1} + {this.state.num2}</p>
-                    <input id="res"  onChange={this.UpdateResponse} value={this.state.response}/>
+                            <p className={this.state.incorrect ? "incorrect" : ""}>{this.state.num1} + {this.state.num2}</p>
+                            <input className="form-control" id="res" onChange={this.UpdateResponse} value={this.state.response} />
                         </div>
                         <div>Score:{this.state.score}</div>
                         <br></br>
-                        <div>
-                            <button className="btn btn-primary" onClick={this.inputKeyPress}>Submit</button>
-                        </div>
+                        <button className="btn btn-primary" id="submit" onClick={this.inputKeyPress}>Submit</button>
                     </div>
                 );
             }
