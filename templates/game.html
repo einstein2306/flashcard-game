@@ -15,7 +15,7 @@
         }
         body{
             text-align: center;
-            background-color: rgba(234, 184, 22, 0.868);
+            background-color: white;
         }
         .score .input{
             font-size:20px;
@@ -25,18 +25,37 @@
             font-size:40px;
         }
         #res{
-            width:20%;
-            border:6%;
-            margin-left:40%;
+            width:37%;
+            border:2px solid black;
+            margin-left:32%;
         }
         #targetScore{
-            width:15%;
-            margin-left: 42%;
+            width:33%;
+            margin-left: 33%;
+            border:2px solid black;
         }
         .great {
             margin-top:15%;
         }
-       
+        .problem {
+            max-width: 90%; /* Adjust the max-width as needed */
+            width: 35%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the div */
+            padding-bottom:5%;
+            margin-top:20px;
+            padding-top:25px;
+            background-color:rgb(253, 175, 74);
+        }
+
+        @media (max-width: 768px) {
+            .problem, .great {
+                width: 90%; /* Adjust the width for mobile devices */
+            }
+            #res, #targetScore {
+                width: 80%; /* Adjust the width for mobile devices */
+                margin-left: 10%; /* Center the input fields */
+            }
+        }
     </style>
 </head>
 <body>
@@ -76,8 +95,8 @@
 
             renderProblem(){
                 return(
-                    <div className="problem">
-                        <h1>Addition Game</h1>
+                    <div className="problem shadow-lg rounded">
+                        <h2>Addition Game</h2>
                         <hr></hr>
                         <div className="input">
                             <p>
