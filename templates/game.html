@@ -125,7 +125,7 @@
                         <div className="input">
                             <p>
                             <label>Target score setup</label><br></br><br></br>
-                            <input className="form-control" id="targetScore" onChange={this.winScoreUpdate} value={this.state.winScore}/>
+                            <input autocomplete="off" className="form-control" id="targetScore" onChange={this.winScoreUpdate} value={this.state.winScore}/>
                         </p>
                         </div>
                         <div className="score">
@@ -133,7 +133,7 @@
                         </div>
                         <div className="values">
                             <p className={this.state.incorrect ? "incorrect" : ""}>{this.state.num1} + {this.state.num2}</p>
-                            <input className="form-control" id="res" onChange={this.UpdateResponse} value={this.state.response} />
+                            <input autocomplete="off" className="form-control" id="res" onChange={this.UpdateResponse} value={this.state.response} />
                         </div>
                         <div>Score:{this.state.score}</div>
                         <br></br>
