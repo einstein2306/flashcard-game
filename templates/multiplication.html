@@ -110,13 +110,13 @@
                         <div className="dropdown">
                             <select className="form-select form-select-sm shadow-lg rounded" aria-label=".form-select-sm example"
                             onChange={this.responsehref}>
-                                <option value="/" selected>Addition</option>
+                                <option value="/">Addition</option>
                                 <option value="/subtraction">subtraction</option>
-                                <option value="/multiplication">multiplication</option> 
+                                <option value="/multiplication" selected>multiplication</option> 
                             </select>
                         </div>
                     <div className="problem shadow-lg rounded">
-                        <h2>Addition</h2>
+                        <h2>Multiplication</h2>
                         <hr></hr>
                         <div className="input">
                             <p>
@@ -128,7 +128,7 @@
                             <p>Target score to win: {this.state.winScore}</p>
                         </div>
                         <div className="values">
-                            <p className={this.state.incorrect ? "incorrect" : ""}>{this.state.num1} + {this.state.num2}</p>
+                            <p className={this.state.incorrect ? "incorrect" : ""}>{this.state.num1} * {this.state.num2}</p>
                             <input className="form-control" id="res" onChange={this.UpdateResponse} value={this.state.response} />
                         </div>
                         <div>Score:{this.state.score}</div>
@@ -160,7 +160,7 @@
 
                     // correct answer..
                     const answer = parseInt(this.state.response);
-                    if(answer === this.state.num1 + this.state.num2){
+                    if(answer === this.state.num1 * this.state.num2){
                         this.setState(state =>({
                             score : state.score + 1,
                             response:"",
